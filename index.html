@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f3f4f6, #dfe9f3);
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 100px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            animation: slideDown 1s ease-in-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            font-size: 16px;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .nav-links div {
+            padding: 10px 15px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .nav-links div:hover {
+            color: #387ed1;
+            transform: scale(1.1);
+        }
+
+        .landing-section {
+            margin-top: 100px;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .landing-section img {
+            max-width: 80%;
+            height: auto;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #222;
+            animation: slideUp 1.5s ease-in-out;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #555;
+            animation: slideUp 1.8s ease-in-out;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .cta {
+            background: linear-gradient(90deg, #387ed1, #1d4ed8);
+            color: white;
+            padding: 15px 40px;
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(56, 126, 209, 0.3);
+            transition: all 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(56, 126, 209, 0.4);
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            width: 300%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.2);
+            top: -150%;
+            left: -100%;
+            transform: rotate(30deg);
+            transition: all 0.5s;
+        }
+
+        .cta:hover::before {
+            top: 120%;
+            left: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="logo.svg" width="150">
+        <div class="nav-links">
+            <div>Signup</div>
+            <div>Login</div>
+            <div>Help</div>
+            <div>Pricing</div>
+        </div>
+    </div>
+
+    <div class="landing-section">
+        <img src="landing.png">
+        <h1>Invest in everything</h1>
+        <h2>Online platform to invest in stocks, derivatives, mutual funds, ETFs, bonds, and more.</h2>
+        <div class="cta">Signup for free</div>
+    </div>
+</body>
+</html>
